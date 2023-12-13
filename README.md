@@ -3,6 +3,11 @@
 This repository hosts all the community contributed modules and extensions for 
 [Conductor OSS](https://github.com/conductor-oss/conductor)
 
+## ⭐ Conductor OSS
+Show support for the Conductor OSS.  Please help spread the awareness by starring this repo.
+
+[![GitHub stars](https://img.shields.io/github/stars/conductor-oss/conductor.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/conductor-oss/conductor/stargazers/)
+
 
 ### What is _this_ repository?
 Conductor OSS is an extensible platform that allows users to bring in their own persistence, queues, integrations eventing systems such as SQS, NATS, AMQP etc.
