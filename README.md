@@ -6,7 +6,8 @@ This repository hosts all the community contributed modules and extensions for
 ## ⭐ Conductor OSS
 Show support for the Conductor OSS.  Please help spread the awareness by starring this repo.
 
-[![GitHub stars](https://img.shields.io/github/stars/conductor-oss/conductor.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/conductor-oss/conductor/stargazers/)
+[![GitHub stars](https://img.shields.io/github/stars/conductor-oss/conductor.svg?style=social&label=Star&maxAge=)](https://GitHub.com/conductor-oss/conductor/)
+
 
 
 ### What is _this_ repository?
