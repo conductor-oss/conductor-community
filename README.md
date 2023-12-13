@@ -1,27 +1,11 @@
-# Netflix Conductor community modules
+# Conductor OSS community modules
 
 This repository hosts all the community contributed modules and extensions for 
-[Netflix Conductor](https://github.com/Netflix/conductor)
+[Conductor OSS](https://github.com/conductor-oss/conductor)
 
-![Netflix Conductor Logo](https://github.com/Netflix/conductor/blob/main/docs/docs/img/conductor-vector-x.png)
-
-## What is Conductor?
-Conductor is a workflow orchestration engine that runs in the cloud.
-You can find more details about Conductor at the main repository of [Netflix Conductor](https://github.com/Netflix/conductor)
 
 ### What is _this_ repository?
-Conductor is an extensible platform that allows users to bring in their own persistence, queues, integrations eventing systems such as SQS, NATS, AMQP etc.
-
-The core conductor project contains implementations tested and supported by Netflix, while this repository will contain all
-the modules contributed by community.
-
-### Who is responsible for maintaining this repository?
-Netflix in collaboration with the team at Orkes (https://orkes.io/) will continue to maintain this repository.
-
-## Repository Structure and Published Artifcats
-Binaries are available from [Netflix OSS Maven](https://artifacts.netflix.net/netflixoss/com/netflix/conductor/) repository, or the [Maven Central Repository](https://search.maven.org/search?q=g:com.netflix.conductor).
-
-Binaries are published under the group: **com.netflix.conductor**
+Conductor OSS is an extensible platform that allows users to bring in their own persistence, queues, integrations eventing systems such as SQS, NATS, AMQP etc.
 
 For the list of artifacts published please see the table below:
 
@@ -51,18 +35,9 @@ Similar to core Conductor the builds are published often with each major release
 Release numbers are kept in sync with main Conductor releases, which removes the need for a version compatibility matrix.
 
 #### How do I get help?
-Please use the Discussions on Conductor repo at https://github.com/Netflix/conductor/discussions
+Please join the [Slack community](https://join.slack.com/t/orkes-conductor/shared_invite/zt-xyxqyseb-YZ3hwwAgHJH97bsrYRnSZg) for help.
 
 #### How do I add new modules here?
 1. Start with a proposal by posting on the discussion
 2. Send a PR
-
-#### I have a question not listed here.
-Please use the Discussions on Conductor repo at https://github.com/Netflix/conductor/discussions
-
-#### Does it change how I build Conductor or use the Conductor binaries? (Do I need to pull additional dependency in my builds going forward?)
-Conductor (https://github.com/Netflix/conductor) **no longer** pulls in all the dependencies from this repository as part of the [conductor-server](https://github.com/Netflix/conductor/tree/main/server) build.
-If you plan to use the modules from this repository, please build [community-server](/community-server) which pulls in all the dependencies. 
-
-
 
