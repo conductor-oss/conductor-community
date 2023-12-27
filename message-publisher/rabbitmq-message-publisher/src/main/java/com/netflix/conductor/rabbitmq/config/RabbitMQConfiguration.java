@@ -18,7 +18,7 @@ import org.springframework.context.annotation.Configuration;
 
 import com.netflix.conductor.contribs.queue.amqp.AMQPConnection;
 import com.netflix.conductor.contribs.queue.amqp.config.AMQPRetryPattern;
-import com.netflix.conductor.rabbitmq.listener.WorkflowStatusListenerRabbitMQ;
+import com.netflix.conductor.rabbitmq.listener.WorkflowStatusPublisherRabbitMQ;
 import com.netflix.conductor.rabbitmq.services.RabbitMQService;
 import com.netflix.conductor.rabbitmq.services.RabbitMQServiceImpl;
 
@@ -62,8 +62,8 @@ public class RabbitMQConfiguration {
             havingValue = "true",
             matchIfMissing = false)
     @Bean
-    public WorkflowStatusListenerRabbitMQ workflowStatusListenerRabbitMQ(
+    public WorkflowStatusPublisherRabbitMQ workflowStatusListenerRabbitMQ(
             RabbitMQService rabbitMQService, RabbitMQProperties rabbitMQProperties) {
-        return new WorkflowStatusListenerRabbitMQ(rabbitMQService, rabbitMQProperties);
+        return new WorkflowStatusPublisherRabbitMQ(rabbitMQService, rabbitMQProperties);
     }
 }

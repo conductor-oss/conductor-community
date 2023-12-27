@@ -19,13 +19,13 @@ import com.netflix.conductor.model.WorkflowModel;
 import com.netflix.conductor.rabbitmq.config.RabbitMQProperties;
 import com.netflix.conductor.rabbitmq.services.RabbitMQService;
 
-public class WorkflowStatusListenerRabbitMQ implements WorkflowStatusListener {
+public class WorkflowStatusPublisherRabbitMQ implements WorkflowStatusListener {
 
-    private final Logger LOGGER = LoggerFactory.getLogger(WorkflowStatusListenerRabbitMQ.class);
+    private final Logger LOGGER = LoggerFactory.getLogger(WorkflowStatusPublisherRabbitMQ.class);
     private final RabbitMQService rabbitMQService;
     private final String EXCHANGE_NAME;
 
-    public WorkflowStatusListenerRabbitMQ(
+    public WorkflowStatusPublisherRabbitMQ(
             RabbitMQService rabbitMQService, RabbitMQProperties rabbitMQProperties) {
         this.rabbitMQService = rabbitMQService;
         this.EXCHANGE_NAME = rabbitMQProperties.getWorkflowStatusExchange();
