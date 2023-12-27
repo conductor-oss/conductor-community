@@ -21,7 +21,7 @@ import com.netflix.conductor.rabbitmq.services.RabbitMQService;
 
 public class TaskStatusPublisherRabbitMQ implements TaskStatusListener {
 
-    private Logger LOGGER = LoggerFactory.getLogger(TaskStatusPublisherRabbitMQ.class);
+    private final Logger LOGGER = LoggerFactory.getLogger(TaskStatusPublisherRabbitMQ.class);
 
     private final RabbitMQService rabbitMQService;
     private final RabbitMQProperties rabbitMQProperties;
