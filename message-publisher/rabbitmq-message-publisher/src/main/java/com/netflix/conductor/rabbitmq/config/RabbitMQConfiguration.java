@@ -27,7 +27,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.rabbitmq.client.Address;
 import com.rabbitmq.client.ConnectionFactory;
 
-@Configuration(proxyBeanMethods = false)
+@Configuration
 @EnableConfigurationProperties(RabbitMQProperties.class)
 @ConditionalOnProperty(name = "conductor.message-publisher.type", havingValue = "rabbitmq")
 public class RabbitMQConfiguration {
