@@ -18,7 +18,10 @@ import org.springframework.context.annotation.Configuration;
 
 import com.netflix.conductor.contribs.queue.amqp.AMQPConnection;
 import com.netflix.conductor.contribs.queue.amqp.config.AMQPRetryPattern;
+import com.netflix.conductor.rabbitmq.services.RabbitMQService;
+import com.netflix.conductor.rabbitmq.services.RabbitMQServiceImpl;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.rabbitmq.client.Address;
 import com.rabbitmq.client.ConnectionFactory;
 
@@ -44,5 +47,11 @@ public class RabbitMQConfiguration {
         AMQPRetryPattern retryPattern = new AMQPRetryPattern();
 
         return AMQPConnection.getInstance(connectionFactory, addresses, retryPattern);
+    }
+
+    @Bean
+    public RabbitMQService rabbitMQService(
+            AMQPConnection amqpConnection, ObjectMapper objectMapper) {
+        return new RabbitMQServiceImpl(amqpConnection, objectMapper);
     }
 }
