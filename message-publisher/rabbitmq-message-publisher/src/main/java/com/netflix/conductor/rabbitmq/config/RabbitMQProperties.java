@@ -37,6 +37,8 @@ public class RabbitMQProperties {
     private String workflowStatusExchange;
     private String taskStatusExchange;
 
+    private boolean workflowStatusListenerEnabled = true;
+
     public String getHosts() {
         return hosts;
     }
@@ -123,5 +125,13 @@ public class RabbitMQProperties {
 
     public void setAllowedTaskStatuses(String allowedTaskStatuses) {
         this.allowedTaskStatuses = allowedTaskStatuses;
+    }
+
+    public boolean isWorkflowStatusListenerEnabled() {
+        return workflowStatusListenerEnabled;
+    }
+
+    public void setWorkflowStatusListenerEnabled(boolean workflowStatusListenerEnabled) {
+        this.workflowStatusListenerEnabled = workflowStatusListenerEnabled;
     }
 }

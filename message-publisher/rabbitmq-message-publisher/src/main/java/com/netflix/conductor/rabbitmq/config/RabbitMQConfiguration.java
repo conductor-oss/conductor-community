@@ -58,9 +58,8 @@ public class RabbitMQConfiguration {
     }
 
     @ConditionalOnProperty(
-            prefix = "conductor.message-publisher.workflow-status",
-            name = "enabled",
-            havingValue = "true",
+            name = "conductor.workflow-status-listener.type",
+            havingValue = "rabbitmq",
             matchIfMissing = false)
     @Bean
     public WorkflowStatusPublisherRabbitMQ workflowStatusListenerRabbitMQ(
@@ -69,9 +68,8 @@ public class RabbitMQConfiguration {
     }
 
     @ConditionalOnProperty(
-            prefix = "conductor.message-publisher.task-status",
-            name = "enabled",
-            havingValue = "true",
+            name = "conductor.task-status-listener.type",
+            havingValue = "rabbitmq",
             matchIfMissing = false)
     @Bean
     public TaskStatusPublisherRabbitMQ taskStatusPublisherRabbitMQ(
