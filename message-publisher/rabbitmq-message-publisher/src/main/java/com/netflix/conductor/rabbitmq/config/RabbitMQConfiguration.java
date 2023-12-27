@@ -18,6 +18,7 @@ import org.springframework.context.annotation.Configuration;
 
 import com.netflix.conductor.contribs.queue.amqp.AMQPConnection;
 import com.netflix.conductor.contribs.queue.amqp.config.AMQPRetryPattern;
+import com.netflix.conductor.rabbitmq.listener.WorkflowStatusListenerRabbitMQ;
 import com.netflix.conductor.rabbitmq.services.RabbitMQService;
 import com.netflix.conductor.rabbitmq.services.RabbitMQServiceImpl;
 
@@ -53,5 +54,16 @@ public class RabbitMQConfiguration {
     public RabbitMQService rabbitMQService(
             AMQPConnection amqpConnection, ObjectMapper objectMapper) {
         return new RabbitMQServiceImpl(amqpConnection, objectMapper);
+    }
+
+    @ConditionalOnProperty(
+            prefix = "conductor.message-publisher.workflow-status",
+            name = "enabled",
+            havingValue = "true",
+            matchIfMissing = false)
+    @Bean
+    public WorkflowStatusListenerRabbitMQ workflowStatusListenerRabbitMQ(
+            RabbitMQService rabbitMQService, RabbitMQProperties rabbitMQProperties) {
+        return new WorkflowStatusListenerRabbitMQ(rabbitMQService, rabbitMQProperties);
     }
 }
