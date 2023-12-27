@@ -7,6 +7,8 @@ dependencies {
     implementation "com.netflix.conductor:conductor-core:${revConductor}"
     implementation "com.netflix.conductor:conductor-amqp:${revConductor}"
 
+    implementation "com.rabbitmq:amqp-client:${revAmqpClient}"
+
     compileOnly 'org.springframework.boot:spring-boot-starter'
     compileOnly 'org.springframework.boot:spring-boot-starter-web'
 
