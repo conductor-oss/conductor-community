@@ -11,6 +11,8 @@
  */
 package com.netflix.conductor.rabbitmq.config;
 
+import com.netflix.conductor.core.listener.TaskStatusListener;
+import com.netflix.conductor.core.listener.WorkflowStatusListener;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -62,7 +64,7 @@ public class RabbitMQConfiguration {
             havingValue = "rabbitmq",
             matchIfMissing = false)
     @Bean
-    public WorkflowStatusPublisherRabbitMQ workflowStatusListenerRabbitMQ(
+    public WorkflowStatusListener workflowStatusListenerRabbitMQ(
             RabbitMQService rabbitMQService, RabbitMQProperties rabbitMQProperties) {
         return new WorkflowStatusPublisherRabbitMQ(rabbitMQService, rabbitMQProperties);
     }
@@ -72,7 +74,7 @@ public class RabbitMQConfiguration {
             havingValue = "rabbitmq",
             matchIfMissing = false)
     @Bean
-    public TaskStatusPublisherRabbitMQ taskStatusPublisherRabbitMQ(
+    public TaskStatusListener taskStatusPublisherRabbitMQ(
             RabbitMQService rabbitMQService, RabbitMQProperties rabbitMQProperties) {
         return new TaskStatusPublisherRabbitMQ(rabbitMQService, rabbitMQProperties);
     }

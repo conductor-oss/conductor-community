@@ -34,7 +34,7 @@ public class WorkflowStatusPublisherRabbitMQ implements WorkflowStatusListener {
     @Override
     public void onWorkflowCompletedIfEnabled(WorkflowModel workflow) {
         if (workflow.getWorkflowDefinition().isWorkflowStatusListenerEnabled()
-                || rabbitMQProperties.isWorkflowStatusListenerEnabled()) {
+                || rabbitMQProperties.isAlwaysPublishWorkflowStatusEnabled()) {
             onWorkflowCompleted(workflow);
         }
     }
@@ -42,7 +42,7 @@ public class WorkflowStatusPublisherRabbitMQ implements WorkflowStatusListener {
     @Override
     public void onWorkflowTerminatedIfEnabled(WorkflowModel workflow) {
         if (workflow.getWorkflowDefinition().isWorkflowStatusListenerEnabled()
-                || rabbitMQProperties.isWorkflowStatusListenerEnabled()) {
+                || rabbitMQProperties.isAlwaysPublishWorkflowStatusEnabled()) {
             onWorkflowTerminated(workflow);
         }
     }
@@ -50,7 +50,7 @@ public class WorkflowStatusPublisherRabbitMQ implements WorkflowStatusListener {
     @Override
     public void onWorkflowFinalizedIfEnabled(WorkflowModel workflow) {
         if (workflow.getWorkflowDefinition().isWorkflowStatusListenerEnabled()
-                || rabbitMQProperties.isWorkflowStatusListenerEnabled()) {
+                || rabbitMQProperties.isAlwaysPublishWorkflowStatusEnabled()) {
             onWorkflowFinalized(workflow);
         }
     }

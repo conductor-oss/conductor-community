@@ -22,7 +22,7 @@ import com.rabbitmq.client.ConnectionFactory;
 public class RabbitMQProperties {
 
     private String hosts = ConnectionFactory.DEFAULT_HOST;
-    private String username = ConnectionFactory.DEFAULT_HOST;
+    private String username = ConnectionFactory.DEFAULT_USER;
     private String password = ConnectionFactory.DEFAULT_PASS;
 
     private int port = ConnectionFactory.DEFAULT_AMQP_PORT;
@@ -37,7 +37,7 @@ public class RabbitMQProperties {
     private String workflowStatusExchange;
     private String taskStatusExchange;
 
-    private boolean workflowStatusListenerEnabled = true;
+    private boolean alwaysPublishWorkflowStatusEnabled = true;
 
     public String getHosts() {
         return hosts;
@@ -127,11 +127,11 @@ public class RabbitMQProperties {
         this.allowedTaskStatuses = allowedTaskStatuses;
     }
 
-    public boolean isWorkflowStatusListenerEnabled() {
-        return workflowStatusListenerEnabled;
+    public boolean isAlwaysPublishWorkflowStatusEnabled() {
+        return alwaysPublishWorkflowStatusEnabled;
     }
 
-    public void setWorkflowStatusListenerEnabled(boolean workflowStatusListenerEnabled) {
-        this.workflowStatusListenerEnabled = workflowStatusListenerEnabled;
+    public void setAlwaysPublishWorkflowStatusEnabled(boolean alwaysPublishWorkflowStatusEnabled) {
+        this.alwaysPublishWorkflowStatusEnabled = alwaysPublishWorkflowStatusEnabled;
     }
 }
