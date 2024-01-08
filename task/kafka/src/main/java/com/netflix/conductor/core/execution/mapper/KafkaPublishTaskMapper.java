@@ -19,7 +19,6 @@ import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.netflix.conductor.common.metadata.tasks.TaskDef;
@@ -40,7 +39,6 @@ public class KafkaPublishTaskMapper implements TaskMapper {
     private final ParametersUtils parametersUtils;
     private final MetadataDAO metadataDAO;
 
-    @Autowired
     public KafkaPublishTaskMapper(ParametersUtils parametersUtils, MetadataDAO metadataDAO) {
         this.parametersUtils = parametersUtils;
         this.metadataDAO = metadataDAO;
