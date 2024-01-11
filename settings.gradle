@@ -25,6 +25,7 @@ include 'index'
 include 'test-util'
 include 'lock'
 include 'workflow-event-listener'
+include 'message-publisher'
 
 include 'persistence:common-persistence'
 include 'persistence:mysql-persistence'
@@ -35,6 +36,7 @@ include 'external-payload-storage:postgres-external-storage'
 include 'event-queue:amqp'
 include 'event-queue:nats'
 include 'event-queue:nats-streaming'
+include 'message-publisher:rabbitmq-message-publisher'
 include 'lock:zookeeper-lock'
 include 'task:kafka'
 include 'community-server'
@@ -42,13 +44,13 @@ include 'community-server'
 rootProject.children.stream()
         .filter(p -> p.name.equals("persistence") || p.name.equals("index") ||
                 p.name.equals("external-payload-storage") || p.name.equals("event-queue") ||
-                p.name.equals("lock") || p.name.equals("task"))
+                p.name.equals("lock") || p.name.equals("task") || p.name.equals("message-publisher"))
         .forEach(it -> it.children
                 .forEach(c -> c.name = "conductor-" + c.name))
 
 rootProject.children.stream()
         .filter(p -> !p.name.equals("persistence") && !p.name.equals("index") &&
                 !p.name.equals("external-payload-storage") && !p.name.equals("event-queue") &&
-                !p.name.equals("lock") && !p.name.equals("task"))
+                !p.name.equals("lock") && !p.name.equals("task") && !p.name.equals("message-publisher"))
         .forEach(it -> it.name = "conductor-" + it.name)
 
