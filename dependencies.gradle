@@ -28,7 +28,7 @@ ext {
     revMockServerClient = '5.12.0'
     revStan = '2.2.3'
     revNatsStreaming = '2.6.5'
-    revNats = '2.15.6'
+    revNats = '2.16.14'
     revOpenapi = '1.6.+'
     revPowerMock = '2.0.9'
     revPrometheus = '0.9.0'

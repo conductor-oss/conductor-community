@@ -298,7 +298,7 @@
             "firstLevelTransitive": [
                 "com.netflix.conductor:conductor-nats"
             ],
-            "locked": "2.15.6"
+            "locked": "2.16.14"
         },
         "io.prometheus:simpleclient": {
             "firstLevelTransitive": [
@@ -695,7 +695,7 @@
             "firstLevelTransitive": [
                 "com.netflix.conductor:conductor-nats"
             ],
-            "locked": "2.15.6"
+            "locked": "2.16.14"
         },
         "io.prometheus:simpleclient": {
             "firstLevelTransitive": [
@@ -1235,7 +1235,7 @@
             "firstLevelTransitive": [
                 "com.netflix.conductor:conductor-nats"
             ],
-            "locked": "2.15.6"
+            "locked": "2.16.14"
         },
         "io.prometheus:simpleclient": {
             "firstLevelTransitive": [
