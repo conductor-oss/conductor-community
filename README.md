@@ -6,4 +6,6 @@ This was done primarily while under the Netflix org to keep maintainance of the 
 With the creation of conductoross, the community modules are part of the main repo (yay!).
 All the modules that are part of the conductoross/conductor will be treated as the primary artifacts going forward and continue to be supported/maintained.
 
+All the code that existed in this repository has already been migrated to the conductor project.
 
+If you had any open PR, please send it against conductoross/conductor project.
